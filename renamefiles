@@ -1,0 +1,11 @@
+Get-Item .\*.png | ForEach-Object {Rename-Item $_ ($_.Name -replace "text you want to remove", "")}
+
+#this removes text from png files - its fun learnt and adapted from here
+#https://stackoverflow.com/questions/12590931/remove-character-from-file-name-in-powershell
+
+#Example below to remove hyphen from file names that need to be uploaded to website:
+#Goto directory in Power Shell
+#edit the script to replace the text with what you want in this case replace "-" with ""
+
+PS C:\ cd "C:\Staff ID Badge\imagin-badges.co.uk\images\blank-backgrounds"
+PS C:\Staff ID Badge\imagin-badges.co.uk\images\blank-backgrounds> Get-Item .\*.png | ForEach-Object {Rename-Item $_ ($_.Name -replace "-", "")} 
